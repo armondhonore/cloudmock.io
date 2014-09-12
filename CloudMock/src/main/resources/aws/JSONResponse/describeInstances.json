@@ -1,0 +1,144 @@
+{
+    "Reservations": [
+        {
+            "Groups": [
+                {
+                    "GroupId": "sg-54b0263c",
+                    "GroupName": "default"
+                }
+            ],
+            "Instances": [
+                {
+                    "PrivateDnsName": "ip-10-180-178-102.ec2.internal",
+                    "Architecture": "x86_64",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-54b0263c",
+                            "GroupName": "default"
+                        }
+                    ],
+                    "Hypervisor": "xen",
+                    "ClientToken": null,
+                    "InstanceType": "t1.micro",
+                    "NetworkInterfaces": [],
+                    "VirtualizationType": "paravirtual",
+                    "AmiLaunchIndex": 0,
+                    "PrivateIpAddress": "10.180.178.102",
+                    "RootDeviceType": "ebs",
+                    "ProductCodes": [],
+                    "KernelId": "aki-919dcaf8",
+                    "PublicIpAddress": "54.242.149.76",
+                    "Placement": {
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a",
+                        "GroupName": null
+                    },
+                    "InstanceId": "i-c8a64a26",
+                    "EbsOptimized": false,
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "StateTransitionReason": null,
+                    "RootDeviceName": "/dev/sda1",
+                    "ImageId": "ami-7c807d14",
+                    "KeyName": "awslinux",
+                    "LaunchTime": "2014-09-08T08:06:12.000Z",
+                    "State": {
+                        "Code": 16,
+                        "Name": "running"
+                    },
+                    "BlockDeviceMappings": [
+                        {
+                            "Ebs": {
+                                "DeleteOnTermination": true,
+                                "AttachTime": "2014-09-08T08:06:16.000Z",
+                                "Status": "attached",
+                                "VolumeId": "vol-ea2187a5"
+                            },
+                            "DeviceName": "/dev/sda1"
+                        }
+                    ],
+                    "PublicDnsName": "ec2-54-242-149-76.compute-1.amazonaws.com"
+                }
+            ],
+            "ReservationId": "r-a52e90d5",
+            "OwnerId": "533286118017"
+        },
+        {
+            "Groups": [
+                {
+                    "GroupId": "sg-e2b0268a",
+                    "GroupName": "quick-start-1"
+                }
+            ],
+            "Instances": [
+                {
+                    "PrivateDnsName": null,
+                    "Architecture": "x86_64",
+                    "SecurityGroups": [
+                        {
+                            "GroupId": "sg-e2b0268a",
+                            "GroupName": "quick-start-1"
+                        }
+                    ],
+                    "Hypervisor": "xen",
+                    "ClientToken": "CThHi1342157534768",
+                    "InstanceType": "t1.micro",
+                    "NetworkInterfaces": [],
+                    "VirtualizationType": "paravirtual",
+                    "AmiLaunchIndex": 0,
+                    "RootDeviceType": "ebs",
+                    "ProductCodes": [],
+                    "KernelId": "aki-825ea7eb",
+                    "Placement": {
+                        "Tenancy": "default",
+                        "AvailabilityZone": "us-east-1a",
+                        "GroupName": null
+                    },
+                    "InstanceId": "i-305dc048",
+                    "EbsOptimized": false,
+                    "StateReason": {
+                        "Code": "Client.UserInitiatedShutdown",
+                        "Message": "Client.UserInitiatedShutdown: User initiated shutdown"
+                    },
+                    "Monitoring": {
+                        "State": "disabled"
+                    },
+                    "StateTransitionReason": "User initiated (2013-10-04 00:29:08 GMT)",
+                    "Tags": [
+                        {
+                            "Value": "Ubuntu Svn Server",
+                            "Key": "Linux SVN Server"
+                        },
+                        {
+                            "Value": "SVN server",
+                            "Key": "Name"
+                        }
+                    ],
+                    "RootDeviceName": "/dev/sda1",
+                    "ImageId": "ami-82fa58eb",
+                    "KeyName": "awslinux",
+                    "LaunchTime": "2012-07-13T05:32:15.000Z",
+                    "State": {
+                        "Code": 80,
+                        "Name": "stopped"
+                    },
+                    "BlockDeviceMappings": [
+                        {
+                            "Ebs": {
+                                "DeleteOnTermination": true,
+                                "AttachTime": "2012-07-13T05:32:17.000Z",
+                                "Status": "attached",
+                                "VolumeId": "vol-34993955"
+                            },
+                            "DeviceName": "/dev/sda1"
+                        }
+                    ],
+                    "PublicDnsName": null
+                }
+            ],
+            "ReservationId": "r-21362744",
+            "OwnerId": "533286118017"
+        }
+    ]
+}

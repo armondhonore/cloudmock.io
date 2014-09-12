@@ -1,0 +1,55 @@
+{
+    "Groups": [
+        {
+            "GroupName": "default",
+            "GroupId": "sg-54b0263c"
+        }
+    ],
+    "ReservationId": "r-0df89726",
+    "Instances": [
+        {
+            "InstanceType": "m1.small",
+            "RootDeviceName": "/dev/sda1",
+            "BlockDeviceMappings": [],
+            "Placement": {
+                "AvailabilityZone": "us-east-1b",
+                "GroupName": null,
+                "Tenancy": "default"
+            },
+            "EbsOptimized": false,
+            "LaunchTime": "2014-09-12T10:44:44.000Z",
+            "ImageId": "ami-7c807d14",
+            "StateReason": {
+                "Code": "pending",
+                "Message": "pending"
+            },
+            "RootDeviceType": "ebs",
+            "NetworkInterfaces": [],
+            "ClientToken": null,
+            "Architecture": "x86_64",
+            "KernelId": "aki-919dcaf8",
+            "Hypervisor": "xen",
+            "Monitoring": {
+                "State": "disabled"
+            },
+            "PublicDnsName": null,
+            "InstanceId": "i-d734803c",
+            "PrivateDnsName": null,
+            "State": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "SecurityGroups": [
+                {
+                    "GroupName": "default",
+                    "GroupId": "sg-54b0263c"
+                }
+            ],
+            "StateTransitionReason": null,
+            "ProductCodes": [],
+            "AmiLaunchIndex": 0,
+            "VirtualizationType": "paravirtual"
+        }
+    ],
+    "OwnerId": "533286118017"
+}
