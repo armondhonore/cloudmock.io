@@ -1,34 +1,32 @@
 package com.cloudmock.api.aws.ec2;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cloudmock.util.CommonUtils;
+
 @RestController
 public class DescribeInstancesController
 {
 
+	@Autowired
+	CommonUtils commonUtils;
+
 	@RequestMapping("/aws/ec2/describeinstances")
-	public String mockAWSCloud(@RequestParam(value = "Signature", required = false) String signature, @RequestParam(
-			value = "Version", required = false) String version, @RequestParam(value = "AWSAccessKeyId",
-			required = false) String awsAccessKeyId,
-			@RequestParam(value = "SignatureMethod", required = false) String signatureMethod, @RequestParam(
-					value = "Timestamp", required = false) String timeStamp, @RequestParam(value = "Action",
-					required = false) String action, @RequestHeader(value = "content-type") String contentType)
-			throws IOException
+	public String mockAWSCloud(@Valid CommonRequestParams params,
+			@RequestHeader(value = "content-type") String contentType) throws IOException
 	{
 
 		/*
 		 * TODO Request have the params present in command For eg: CLI command:
-		 * aws ec2 describe-images --image-ids ami-xxxxx --endpoint-url
 		 * http://127.0.1.1:8080/aws
 		 * 
 		 * Params in request are: ImageId.1 : ami-xxxxx Action : DescribeImages
@@ -61,54 +59,60 @@ public class DescribeInstancesController
 		 * client.
 		 */
 
-		return getResponse(contentType, action);
-	}
-
-	private String getResponse(String contentType, String action) throws FileNotFoundException, IOException
-	{
-		File file = null;
-
-		if (contentType.equalsIgnoreCase("application/x-www-form-urlencoded"))
-		{
-			file = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "aws"
-					+ File.separator + "XMLResponse" + File.separator + action + ".xml");
-
-		}
-		else if (contentType.equalsIgnoreCase("application/json"))
-		{
-
-			file = new File("src" + File.separator + "main" + File.separator + "resources" + File.separator + "aws"
-					+ File.separator + "JSONResponse" + File.separator + action + ".json");
-		}
-
-		Reader reader = new FileReader(file);
-		BufferedReader bufferedReader = new BufferedReader(reader);
-		StringBuilder sbJSONCommand = new StringBuilder();
-
-		String s = null;
-		while ((s = bufferedReader.readLine()) != null)
-		{
-			sbJSONCommand.append(s);
-			sbJSONCommand.append("\n");
-		}
-		bufferedReader.close();
-		return sbJSONCommand.toString();
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
 	}
 
 	@RequestMapping("/aws/ec2/runinstances")
-	public String runInstancesMock(@RequestParam(value = "Signature", required = false) String signature,
-			@RequestParam(value = "Version", required = false) String version, @RequestParam(value = "AWSAccessKeyId",
-					required = false) String awsAccessKeyId,
-			@RequestParam(value = "SignatureMethod", required = false) String signatureMethod, @RequestParam(
-					value = "MinCount", required = false) Integer minCount, @RequestParam(value = "MaxCount",
-					required = false) Integer maxCount,
-			@RequestParam(value = "SignatureVersion", required = false) Integer signatureVersion, @RequestParam(
-					value = "Timestamp", required = false) String timeStamp, @RequestParam(value = "Action",
-					required = false) String action, @RequestHeader(value = "content-type") String contentType)
+	public String runInstancesMock(@Valid CommonRequestParams params,
+			@RequestParam(value = "MinCount", required = true) Integer minCount, @RequestParam(value = "MaxCount",
+					required = true) Integer maxCount, @RequestHeader(value = "content-type") String contentType)
 			throws IOException
 	{
-
-		return getResponse(contentType, action.toLowerCase());
-
+		System.out.println(params);
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
 	}
+
+	@RequestMapping("/aws/ec2/describeinstancestatus")
+	public String describeInstanceStatusMock(@Valid CommonRequestParams params,
+			@RequestHeader(value = "content-type") String contentType) throws IOException
+	{
+		System.out.println(params);
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
+	}
+
+	@RequestMapping("/aws/ec2/getconsoleoutput")
+	public String getConsoleOutputMock(@Valid CommonRequestParams params, @RequestParam(required = true,
+			value = "InstanceId") String instanceId, @RequestHeader(value = "content-type") String contentType,
+			HttpServletRequest request) throws IOException
+	{
+		System.out.println(params);
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
+	}
+
+	@RequestMapping("/aws/ec2/getpassworddata")
+	public String getPasswordDataMock(@Valid CommonRequestParams params, @RequestParam(required = true,
+			value = "InstanceId") String instanceId, @RequestHeader(value = "content-type") String contentType)
+			throws IOException
+	{
+		System.out.println(params);
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
+	}
+
+	// TODO Need to check to map all instance IDs to String array
+	@RequestMapping("/aws/ec2/terminateinstances")
+	public String terminateinstances(@Valid CommonRequestParams params, @RequestParam(required = false,
+			value = "InstanceId.1") String[] instanceId, @RequestHeader(value = "content-type") String contentType)
+			throws IOException
+	{
+		System.out.println(params);
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
+	}
+	//
+	// Map<String, String[]> map = request.getParameterMap();
+	//
+	// for (String key : map.keySet())
+	// {
+	// System.out.println(key + "::" + map.get(key));
+	// }
+
 }

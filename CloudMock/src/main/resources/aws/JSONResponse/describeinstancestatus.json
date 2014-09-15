@@ -1,0 +1,56 @@
+{
+    "InstanceStatuses": [
+        {
+            "InstanceStatus": {
+                "Status": "ok",
+                "Details": [
+                    {
+                        "Name": "reachability",
+                        "Status": "passed"
+                    }
+                ]
+            },
+            "InstanceState": {
+                "Name": "running",
+                "Code": 16
+            },
+            "AvailabilityZone": "us-east-1b",
+            "InstanceId": "i-d734803c",
+            "SystemStatus": {
+                "Status": "ok",
+                "Details": [
+                    {
+                        "Name": "reachability",
+                        "Status": "passed"
+                    }
+                ]
+            }
+        },
+        {
+            "InstanceStatus": {
+                "Status": "ok",
+                "Details": [
+                    {
+                        "Name": "reachability",
+                        "Status": "passed"
+                    }
+                ]
+            },
+            "InstanceState": {
+                "Name": "running",
+                "Code": 16
+            },
+            "AvailabilityZone": "us-east-1a",
+            "InstanceId": "i-c8a64a26",
+            "SystemStatus": {
+                "Status": "ok",
+                "Details": [
+                    {
+                        "Name": "reachability",
+                        "Status": "passed"
+                    }
+                ]
+            }
+        }
+    ]
+}
