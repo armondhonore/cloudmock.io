@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StopInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2013-10-15/">
+
+	<requestId>5436b419-fdc3-4901-82fe-6eab6426196f</requestId>
+
+	<instancesSet>
+
+		<item>
+
+			<instanceId>i-305dc048</instanceId>
+
+			<currentState>
+
+				<code>64</code>
+
+				<name>stopping</name>
+
+			</currentState>
+
+			<previousState>
+
+				<code>16</code>
+
+				<name>running</name>
+
+			</previousState>
+
+		</item>
+
+	</instancesSet>
+
+</StopInstancesResponse>

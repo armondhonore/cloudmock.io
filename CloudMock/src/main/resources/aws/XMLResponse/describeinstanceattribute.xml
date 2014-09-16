@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DescribeInstanceAttributeResponse
+	xmlns="http://ec2.amazonaws.com/doc/2013-10-15/">
+
+	<requestId>1dd52010-fb15-4eb2-b304-afe403c49436</requestId>
+
+	<instanceId>i-c8a64a26</instanceId>
+
+	<instanceType>
+
+		<value>t1.micro</value>
+
+	</instanceType>
+
+</DescribeInstanceAttributeResponse>

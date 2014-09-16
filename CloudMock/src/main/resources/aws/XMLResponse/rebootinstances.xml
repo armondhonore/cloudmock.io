@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RebootInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2013-10-15/">
+
+	<requestId>78eefbda-bf5e-4f11-a404-1961ab15fa27</requestId>
+
+	<return>true</return>
+
+</RebootInstancesResponse>

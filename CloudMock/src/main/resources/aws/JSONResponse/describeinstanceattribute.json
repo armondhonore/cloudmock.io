@@ -1,0 +1,57 @@
+{
+	"KernelId": 
+	{
+		
+	},
+
+	"InstanceInitiatedShutdownBehavior": 
+	{
+		
+	},
+
+	"EbsOptimized": 
+	{
+		
+	},
+
+	"UserData": 
+	{
+		
+	},
+
+	"RootDeviceName": 
+	{
+		
+	},
+
+	"RamdiskId": 
+	{
+		
+	},
+
+	"InstanceId": "i-c8a64a26",
+	"InstanceType": 
+	{
+		"Value": "t1.micro"
+	},
+
+	"SriovNetSupport": 
+	{
+		
+	},
+
+	"DisableApiTermination": 
+	{
+		
+	},
+
+	"ProductCodes": 
+	[
+		
+	],
+
+	"BlockDeviceMappings": 
+	[
+		
+	]
+}

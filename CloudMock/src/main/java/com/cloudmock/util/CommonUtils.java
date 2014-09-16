@@ -6,6 +6,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Map;
 
 import org.springframework.stereotype.Component;
 
@@ -42,5 +44,19 @@ public class CommonUtils
 		bufferedReader.close();
 		reader.close();
 		return sbJSONCommand.toString();
+	}
+
+	public ArrayList<String> parseInstanceIds(Map<String, String[]> requestParams)
+	{
+
+		ArrayList<String> instanceIds = new ArrayList<String>();
+		for (String key : requestParams.keySet())
+		{
+			if (key.matches("^InstanceId.([0-9]+)$"))
+			{
+				instanceIds.add(requestParams.get(key)[0]);
+			}
+		}
+		return instanceIds;
 	}
 }

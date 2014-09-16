@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ModifyInstanceAttributeResponse
+	xmlns="http://ec2.amazonaws.com/doc/2013-10-15/">
+
+	<requestId>5c567c50-7219-4f22-8d0a-65a311c5fb23</requestId>
+
+	<return>true</return>
+
+</ModifyInstanceAttributeResponse>

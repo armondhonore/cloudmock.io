@@ -1,11 +1,14 @@
 package com.cloudmock.api.aws.ec2;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,7 +32,6 @@ public class DescribeInstancesController
 		 * TODO Request have the params present in command For eg: CLI command:
 		 * http://127.0.1.1:8080/aws
 		 * 
-		 * Params in request are: ImageId.1 : ami-xxxxx Action : DescribeImages
 		 * SignatureMethod : HmacSHA256 AWSAccessKeyId : AKIXU3XTSPTPOA
 		 * SignatureVersion : 2 Version : 2013-10-15 Signature :
 		 * olDIF1AjWgBUtOmyUGZD+sqo= Timestamp : 2014-09-10T10:26:20.985215
@@ -82,8 +84,8 @@ public class DescribeInstancesController
 
 	@RequestMapping("/aws/ec2/getconsoleoutput")
 	public String getConsoleOutputMock(@Valid CommonRequestParams params, @RequestParam(required = true,
-			value = "InstanceId") String instanceId, @RequestHeader(value = "content-type") String contentType,
-			HttpServletRequest request) throws IOException
+			value = "InstanceId") String instanceId, @RequestHeader(value = "content-type") String contentType)
+			throws IOException
 	{
 		System.out.println(params);
 		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
@@ -100,13 +102,78 @@ public class DescribeInstancesController
 
 	// TODO Need to check to map all instance IDs to String array
 	@RequestMapping("/aws/ec2/terminateinstances")
-	public String terminateinstances(@Valid CommonRequestParams params, @RequestParam(required = false,
-			value = "InstanceId.1") String[] instanceId, @RequestHeader(value = "content-type") String contentType)
-			throws IOException
+	public String terminateinstances(@Valid CommonRequestParams params,
+			@ModelAttribute("InstanceIds") ArrayList<String> instanceIds,
+			@RequestHeader(value = "content-type") String contentType) throws IOException
 	{
 		System.out.println(params);
 		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
 	}
+
+	@RequestMapping("/aws/ec2/describeinstanceattribute")
+	public String describeInstanceAttributeMock(@Valid CommonRequestParams params, @RequestParam(required = true,
+			value = "InstanceId") String instanceId,
+			@RequestParam(required = true, value = "Attribute") String attribute,
+			@RequestHeader(value = "content-type") String contentType) throws IOException
+	{
+		System.out.println(params);
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
+	}
+
+	@RequestMapping("/aws/ec2/rebootinstances")
+	public String rebootInstancesMock(@Valid CommonRequestParams params,
+			@ModelAttribute("InstanceIds") ArrayList<String> instanceIds,
+			@RequestHeader(value = "content-type") String contentType) throws IOException
+	{
+		System.out.println(params);
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
+	}
+
+	@RequestMapping("/aws/ec2/modifyinstanceattribute")
+	public String modifyInstanceAttributeMock(@Valid CommonRequestParams params, @RequestParam(required = true,
+			value = "InstanceId") String instanceId,
+			@RequestParam(required = true, value = "Attribute") String attribute,
+			@RequestHeader(value = "content-type") String contentType) throws IOException
+	{
+		System.out.println(params);
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
+	}
+
+	@RequestMapping("/aws/ec2/resetinstanceattribute")
+	public String resetInstanceAttributeMock(@Valid CommonRequestParams params, @RequestParam(required = true,
+			value = "InstanceId") String instanceId,
+			@RequestParam(required = true, value = "Attribute") String attribute,
+			@RequestHeader(value = "content-type") String contentType) throws IOException
+	{
+		System.out.println(params);
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
+	}
+
+	@RequestMapping("/aws/ec2/startinstances")
+	public String startInstancesMock(@Valid CommonRequestParams params,
+			@ModelAttribute("InstanceIds") ArrayList<String> instanceIds,
+			@RequestHeader(value = "content-type") String contentType) throws IOException
+	{
+		System.out.println(params);
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
+	}
+
+	@RequestMapping("/aws/ec2/stopinstances")
+	public String stopInstancesMock(@Valid CommonRequestParams params,
+			@ModelAttribute("InstanceIds") ArrayList<String> instanceIds,
+			@RequestHeader(value = "content-type") String contentType) throws IOException
+	{
+		System.out.println(params);
+		return commonUtils.getResponse(contentType, params.getAction().toLowerCase());
+	}
+
+	@ModelAttribute("InstanceIds")
+	public ArrayList<String> getIds(HttpServletRequest request)
+	{
+		Map<String, String[]> requestParams = request.getParameterMap();
+		return commonUtils.parseInstanceIds(requestParams);
+	}
+
 	//
 	// Map<String, String[]> map = request.getParameterMap();
 	//
