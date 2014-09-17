@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ResetInstanceAttributeResponse
+	xmlns="http://ec2.amazonaws.com/doc/2013-10-15/">
+
+	<requestId>2fb2758c-29ea-483b-8acc-afef7217815f</requestId>
+
+	<return>true</return>
+
+</ResetInstanceAttributeResponse>

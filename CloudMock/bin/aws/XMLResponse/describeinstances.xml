@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DescribeInstancesResponse xmlns="http://ec2.amazonaws.com/doc/2013-10-15/">
+
+	<requestId>d99012e2-0c31-44a9-8a34-a6899a618e3c</requestId>
+
+	<reservationSet>
+
+		<item>
+
+			<reservationId>r-a52e90d5</reservationId>
+
+			<ownerId>533286118017</ownerId>
+
+			<groupSet>
+
+				<item>
+
+					<groupId>sg-54b0263c</groupId>
+
+					<groupName>default</groupName>
+
+				</item>
+
+			</groupSet>
+
+			<instancesSet>
+
+				<item>
+
+					<instanceId>i-c8a64a26</instanceId>
+
+					<imageId>ami-7c807d14</imageId>
+
+					<instanceState>
+
+						<code>16</code>
+
+						<name>running</name>
+
+					</instanceState>
+
+					<privateDnsName>ip-10-180-178-102.ec2.internal</privateDnsName>
+
+					<dnsName>ec2-54-242-149-76.compute-1.amazonaws.com</dnsName>
+
+					<reason />
+
+					<keyName>awslinux</keyName>
+
+					<amiLaunchIndex>0</amiLaunchIndex>
+
+					<productCodes />
+
+					<instanceType>t1.micro</instanceType>
+
+					<launchTime>2014-09-08T08:06:12.000Z</launchTime>
+
+					<placement>
+
+						<availabilityZone>us-east-1a</availabilityZone>
+
+						<groupName />
+
+						<tenancy>default</tenancy>
+
+					</placement>
+
+					<kernelId>aki-919dcaf8</kernelId>
+
+					<monitoring>
+
+						<state>disabled</state>
+
+					</monitoring>
+
+					<privateIpAddress>10.180.178.102</privateIpAddress>
+
+					<ipAddress>54.242.149.76</ipAddress>
+
+					<groupSet>
+
+						<item>
+
+							<groupId>sg-54b0263c</groupId>
+
+							<groupName>default</groupName>
+
+						</item>
+
+					</groupSet>
+
+					<architecture>x86_64</architecture>
+
+					<rootDeviceType>ebs</rootDeviceType>
+
+					<rootDeviceName>/dev/sda1</rootDeviceName>
+
+					<blockDeviceMapping>
+
+						<item>
+
+							<deviceName>/dev/sda1</deviceName>
+
+							<ebs>
+
+								<volumeId>vol-ea2187a5</volumeId>
+
+								<status>attached</status>
+
+								<attachTime>2014-09-08T08:06:16.000Z</attachTime>
+
+								<deleteOnTermination>true</deleteOnTermination>
+
+							</ebs>
+
+						</item>
+
+					</blockDeviceMapping>
+
+					<virtualizationType>paravirtual</virtualizationType>
+
+					<clientToken />
+
+					<hypervisor>xen</hypervisor>
+
+					<networkInterfaceSet />
+
+					<ebsOptimized>false</ebsOptimized>
+
+				</item>
+
+			</instancesSet>
+
+		</item>
+
+		<item>
+
+			<reservationId>r-21362744</reservationId>
+
+			<ownerId>533286118017</ownerId>
+
+			<groupSet>
+
+				<item>
+
+					<groupId>sg-e2b0268a</groupId>
+
+					<groupName>quick-start-1</groupName>
+
+				</item>
+
+			</groupSet>
+
+			<instancesSet>
+
+				<item>
+
+					<instanceId>i-305dc048</instanceId>
+
+					<imageId>ami-82fa58eb</imageId>
+
+					<instanceState>
+
+						<code>80</code>
+
+						<name>stopped</name>
+
+					</instanceState>
+
+					<privateDnsName />
+
+					<dnsName />
+
+					<reason>User initiated (2013-10-04 00:29:08 GMT)</reason>
+
+					<keyName>awslinux</keyName>
+
+					<amiLaunchIndex>0</amiLaunchIndex>
+
+					<productCodes />
+
+					<instanceType>t1.micro</instanceType>
+
+					<launchTime>2012-07-13T05:32:15.000Z</launchTime>
+
+					<placement>
+
+						<availabilityZone>us-east-1a</availabilityZone>
+
+						<groupName />
+
+						<tenancy>default</tenancy>
+
+					</placement>
+
+					<kernelId>aki-825ea7eb</kernelId>
+
+					<monitoring>
+
+						<state>disabled</state>
+
+					</monitoring>
+
+					<groupSet>
+
+						<item>
+
+							<groupId>sg-e2b0268a</groupId>
+
+							<groupName>quick-start-1</groupName>
+
+						</item>
+
+					</groupSet>
+
+					<stateReason>
+
+						<code>Client.UserInitiatedShutdown</code>
+
+						<message>Client.UserInitiatedShutdown: User initiated shutdown
+						</message>
+
+					</stateReason>
+
+					<architecture>x86_64</architecture>
+
+					<rootDeviceType>ebs</rootDeviceType>
+
+					<rootDeviceName>/dev/sda1</rootDeviceName>
+
+					<blockDeviceMapping>
+
+						<item>
+
+							<deviceName>/dev/sda1</deviceName>
+
+							<ebs>
+
+								<volumeId>vol-34993955</volumeId>
+
+								<status>attached</status>
+
+								<attachTime>2012-07-13T05:32:17.000Z</attachTime>
+
+								<deleteOnTermination>true</deleteOnTermination>
+
+							</ebs>
+
+						</item>
+
+					</blockDeviceMapping>
+
+					<virtualizationType>paravirtual</virtualizationType>
+
+					<clientToken>CThHi1342157534768</clientToken>
+
+					<tagSet>
+
+						<item>
+
+							<key>Linux SVN Server</key>
+
+							<value>Ubuntu Svn Server</value>
+
+						</item>
+
+						<item>
+
+							<key>Name</key>
+
+							<value>SVN server</value>
+
+						</item>
+
+					</tagSet>
+
+					<hypervisor>xen</hypervisor>
+
+					<networkInterfaceSet />
+
+					<ebsOptimized>false</ebsOptimized>
+
+				</item>
+
+			</instancesSet>
+
+		</item>
+
+	</reservationSet>
+
+</DescribeInstancesResponse>

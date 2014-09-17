@@ -1,0 +1,20 @@
+{
+	"StoppingInstances": 
+	[
+		{
+			"PreviousState": 
+			{
+				"Code": 16,
+				"Name": "running"
+			},
+
+			"CurrentState": 
+			{
+				"Code": 64,
+				"Name": "stopping"
+			},
+
+			"InstanceId": "i-305dc048"
+		}
+	]
+}
